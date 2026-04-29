@@ -23,7 +23,7 @@ const ProductCard = ({ item, isInCart, onAdd, onRemove }) => {
       {/* Image */}
       <div className="h-64 w-full bg-gray-800/30 overflow-hidden flex justify-center items-center p-6 hover:bg-gray-800/50 transition-colors duration-500">
         <img
-          src={item.image}
+          src={item.thumbnail}
           alt={item.title}
           className="h-full object-contain transform group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl"
         />

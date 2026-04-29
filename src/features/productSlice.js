@@ -2,11 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchProducts = createAsyncThunk("product/fetch", async () => {
-  const res = await axios.get(
-    "https://fakestoreapiserver.reactbd.org/api/products",
-  );
-  // FakeStoreAPI direct array deta hai, isliye sirf res.data return karein
-  console.log(res.data);
+  const res = await axios.get("https://dummyjson.com/products?limit=0");
+
+  console.log(res.data.products);
 
   return res.data;
 });
@@ -36,9 +34,7 @@ const productSlice = createSlice({
     });
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
       state.status = "succeeded";
-      state.items = Array.isArray(action.payload)
-        ? action.payload
-        : action.payload.data;
+      state.items = action.payload.products;
     });
     builder.addCase(fetchProducts.rejected, (state, action) => {
       state.status = "failed";

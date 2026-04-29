@@ -1,4 +1,4 @@
-import { ShoppingCart, Store } from "lucide-react";
+import { ShoppingBag, ShoppingCart, Store } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 import AddCartIcon from "./CartIcon";
@@ -17,6 +17,18 @@ const Navbar = () => {
               MY<span className="text-orange-400 ">STORE</span>
             </h1>
           </div>
+        </Link>
+        <Link to={"/product"}>
+          <h2
+            className="flex gap-3 bg-orange-500/10 
+          border border-orange-400/50
+          hover:bg-orange-500/20
+          text-orange-400
+          transition duration-200  shadow-lg cursor-pointer p-2 rounded-xl text- "
+          >
+            <ShoppingBag />
+            Products
+          </h2>
         </Link>
         <nav className="flex items-center space-x-6">
           <Link

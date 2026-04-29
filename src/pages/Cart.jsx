@@ -36,7 +36,7 @@ const AddToCart = () => {
                   {/* Image */}
                   <div className="w-24 h-24 bg-gray-800 rounded-2xl p-2 shrink-0">
                     <img
-                      src={item.image}
+                      src={item.thumbnail}
                       alt={item.title}
                       className="w-full h-full object-contain"
                     />

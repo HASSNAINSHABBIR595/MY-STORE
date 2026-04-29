@@ -2,26 +2,52 @@
 
 /* Custom Scrollbar for the Cart Summary Div */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 6px; /* Scrollbar ki width */
+  width: 6px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #0f172a; /* Scrollbar ka background (Gray-950/900) */
+  background: #0f172a;
   border-radius: 10px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #f97316; /* Scrollbar ka color (Orange-500) */
+  background: #f97316;
   border-radius: 10px;
-  border: 2px solid #111827; /* Thora gap dene ke liye (Gray-900) */
+  border: 2px solid #111827;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #ea580c; /* Hover karne par dark orange (Orange-600) */
+  background: #ea580c;
 }
 
-/* Firefox ke liye (Optional) */
-.custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #f97316 #0f172a;
+/* Swiper container ko allow karein ke dots niche nazar ayein */
+.swiper {
+  overflow: visible !important; /* Agar padding se kaam na chale toh ye use karein */
+}
+
+.swiper-pagination {
+  /* Dots ko bilkul niche lane ke liye */
+  bottom: 0px !important;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+/* Inactive Dots */
+.swiper-pagination-bullet {
+  width: 14px !important;
+  height: 14px !important;
+  background-color: #4b5563 !important;
+  opacity: 0.8 !important;
+  margin: 0 8px !important;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Active Dot */
+.swiper-pagination-bullet-active {
+  width: 18px !important; /* Size thora aur bara */
+  height: 18px !important;
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
