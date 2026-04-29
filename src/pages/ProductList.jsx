@@ -11,15 +11,16 @@ const ProductList = () => {
   const { items, selectedCategory, status, error, searchQuery } = useSelector(
     (state) => state.products,
   );
+
+  const productArray = Array.isArray(items) ? items : [];
   const cartItems = useSelector((state) => state.cart.items);
 
   const filteredItems = items.filter((item) => {
     const matchCategory =
       selectedCategory === "All" || item.category === selectedCategory;
-    const matchSearch = item.title
+    const matchSearch = (item.title || item.name || "")
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
-
     return matchCategory && matchSearch;
   });
 
