@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { ShoppingBag, ArrowRight, Star, Zap, ShieldCheck } from "lucide-react";
-import img1 from "../assets/1.png";
+import img1 from "../assets/1.webp";
 
 const HeroSection = () => {
   return (
