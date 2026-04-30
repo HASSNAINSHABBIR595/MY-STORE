@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Hum props ko destructure kar rahe hain
 const ProductCard = ({ item, isInCart, onAdd, onRemove }) => {
   return (
     <div className="group bg-gray-900/50 backdrop-blur-sm rounded-3xl transition-all duration-500 flex flex-col overflow-hidden border border-gray-800 hover:shadow-[0_0_30px_rgba(249,115,22,0.1)] relative">
@@ -50,20 +49,18 @@ const ProductCard = ({ item, isInCart, onAdd, onRemove }) => {
           </h2>
         </Link>
 
-        {/* Buttons - Dispatch yahan nahi hoga, sirf props call honge */}
-        {/* Action Buttons Section */}
         <div className="flex gap-3 mt-auto pt-6">
           {isInCart ? (
             <button
               disabled
-              className="flex-[4] bg-gray-800/50 text-gray-500 py-3.5 rounded-2xl font-bold text-xs uppercase tracking-widest border border-gray-800 cursor-not-allowed flex items-center justify-center gap-2"
+              className="flex-4 bg-gray-800/50 text-gray-500 py-3.5 rounded-2xl font-bold text-xs uppercase tracking-widest border border-gray-800 cursor-not-allowed flex items-center justify-center gap-2"
             >
               In Cart
             </button>
           ) : (
             <button
               onClick={() => onAdd(item)}
-              className="flex-[4] bg-orange-500 text-white py-3.5 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-orange-600 transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20"
+              className="flex-4 bg-orange-500 text-white py-3.5 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-orange-600 transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20"
             >
               <ShoppingCart size={18} />
               <span>Add to Cart</span>
